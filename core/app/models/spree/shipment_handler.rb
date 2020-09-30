@@ -18,7 +18,7 @@ module Spree
     end
 
     def perform
-      @shipment.inventory_units.each &:ship!
+      @shipment.inventory_units.each(&:ship!)
       @shipment.process_order_payments if Spree::Config[:auto_capture_on_dispatch]
       @shipment.touch :shipped_at
       update_order_shipment_state

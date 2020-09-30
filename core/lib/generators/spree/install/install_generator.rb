@@ -170,7 +170,7 @@ module Spree
         if options[:auto_accept] || (options[:admin_email] && options[:admin_password])
           silence_stream(STDOUT) do
             silence_stream(STDERR) do
-              silence_warnings &cmd
+              silence_warnings(&cmd)
             end
           end
         else

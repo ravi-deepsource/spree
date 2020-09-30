@@ -105,14 +105,14 @@ module Spree
               end
 
               it 'should not consider not eligible adjustments' do
-                expect(action.compute_amount(line_item)).to eq -3
+                expect(action.compute_amount(line_item)).to eq(-3)
               end
 
               context 'when adjustments total is greater than item total' do
                 let!(:line_item) { create :line_item, order: order, price: 12 }
 
                 it 'does not exceed it' do
-                  expect(action.compute_amount(line_item)).to eq -2
+                  expect(action.compute_amount(line_item)).to eq(-2)
                 end
               end
             end

@@ -114,7 +114,7 @@ module Spree
     def determine_state(order)
       return 'canceled' if order.canceled?
       return 'pending' unless order.can_ship?
-      return 'pending' if inventory_units.any? &:backordered?
+      return 'pending' if inventory_units.any?(&:backordered?)
       return 'shipped' if shipped?
 
       order.paid? || Spree::Config[:auto_capture_on_dispatch] ? 'ready' : 'pending'
