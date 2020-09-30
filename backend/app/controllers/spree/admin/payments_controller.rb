@@ -38,7 +38,7 @@ module Spree
             payments = [@payment]
           end
 
-          if payments && (saved_payments = payments.select &:persisted?).any?
+          if payments && (saved_payments = payments.select(&:persisted?)).any?
             invoke_callbacks(:create, :after)
 
             # Transition order as far as it will go.

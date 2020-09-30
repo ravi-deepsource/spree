@@ -453,7 +453,7 @@ module Spree
 
     def remove_taxon(taxon)
       removed_classifications = classifications.where(taxon: taxon)
-      removed_classifications.each &:remove_from_list
+      removed_classifications.each(&:remove_from_list)
     end
 
     def discontinue_on_must_be_later_than_available_on

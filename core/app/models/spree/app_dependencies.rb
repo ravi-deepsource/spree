@@ -15,7 +15,7 @@ module Spree
       :account_create_address_service, :account_update_address_service, :address_finder
     ].freeze
 
-    attr_accessor *INJECTION_POINTS
+    attr_accessor(*INJECTION_POINTS)
 
     def initialize
       set_default_ability

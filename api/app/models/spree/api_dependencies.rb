@@ -18,7 +18,7 @@ module Spree
       :storefront_account_create_address_service, :storefront_account_update_address_service, :storefront_address_finder
     ].freeze
 
-    attr_accessor *INJECTION_POINTS
+    attr_accessor(*INJECTION_POINTS)
 
     def initialize
       set_storefront_defaults
