@@ -18,7 +18,7 @@ VARIANTS.each do |(parent_name, taxon_name, product_name, color_name)|
   color = color_option_values.find_by!(name: color_name)
 
   size_option_values.each do |size|
-    if parent_name == 'Women' and %w[Dresses Skirts].include?(taxon_name)
+    if (parent_name == 'Women') && %w[Dresses Skirts].include?(taxon_name)
       length_option_values.each do |length|
         option_values = [color, length, size]
         product.variants.first_or_create! do |variant|
